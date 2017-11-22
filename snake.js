@@ -75,6 +75,11 @@ $(document).ready(function(){
         else if(d == "left") nx--;
         else if(d == "up") ny--;
         else if(d == "down") ny++;
+        //This allows for going through walls
+        if(nx > Math.round((w-cw)/cw)){ nx = 0; }
+        if(ny > Math.round((h-cw)/cw)){ ny = 0; }
+        if(nx < 0){ nx = Math.round((w-cw)/cw); }
+        if(ny < 0){ ny = Math.round((h-cw)/cw); }
 
         //Lets add the game over clauses now
         //This will restart the game if the snake hits the wall
